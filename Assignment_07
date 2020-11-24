@@ -1,0 +1,24 @@
+import random
+import math
+a=int(input())
+b=int(input())
+c=b-a+1
+r=random.randrange(a+1,b,1);
+min_guess=math.ceil(math.log(c,2))
+g=1;
+print("Guess the number.You have ",end="")
+print(min_guess,end=" ")
+print("chances")
+while g<=min_guess:
+    n=int(input())
+    if n==r:
+        print("Correct guess!You won")
+        break
+    if n>r:
+        print("Try again!Your guess is high")
+    elif n<r:
+        print("Try again!Your guess is low")
+    g=g+1
+    if g>min_guess:
+        print("You ran out of guesses.Game over.The correct number is",end=" ")
+        print(r)
