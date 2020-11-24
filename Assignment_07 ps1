@@ -1,38 +1,39 @@
+#creating a class lab
 class lab:
-   def __init__(self,name,email,role):
-       self.name = name
-       self.email = email
-       self.role = role
-
+    __name=""
+    __email=""
+    __role=''
+# method for taking input from the user
+    def setData(self):
+        self.__name = input("Enter Name:\t")
+        self.__email = input("Enter email:\t")
+        self.__role = input("Enter role I for instructor and S for student :\t")
+ # method for giving output
+    def showData(self):
+       # print( self.__name)
+        #print(self.__email)
+        #print("(", self.__role,")")
+        print(self.__name,'(',self.__role,')at' ,self.__email)
+#check if user is student or a instructor
     def information(self):
-        return f"{self.name} ({self.role}) at {self.email} "
-
-
-
+        marks = 0
+        if (self.__role=='S'):
+            marks = input("enter marks")
+            print(self.__name, "(S) scored ",marks )
+        else:
+            if (self.__role=='S'):
+                print(self.__name, "can be reached at ", self.__email)
+            else:
+                print("the role in not defined")
+    # software class to inharite the lab parent class
 class software_lab(lab):
-    def __init__(self, name,email,role,marks):
-        lab__init__(self,name,email,role)
-        self.marks = marks
-
-    def student1(self):
-        return f"{self.name} (s) roll_number ({self.role }) scored{self.marks}"
-
-    def instructor(self):
-        return f"{self.name}(I) can be reached at {self.mail}"
-    marks_in = int(input("enter marks of student "))
-    software_lab1 = software_lab()
-
-
-
-
+   pass
 def main():
-    #Employee Object
+    #lab Object
     student = lab()
     student.setData()
     student.showData()
-    student1 = software_lab()
-    student1.softwarelab()
-
-
+    student.information()
+#developer function
 if __name__=="__main__":
     main()
