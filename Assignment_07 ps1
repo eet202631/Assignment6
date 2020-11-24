@@ -1,0 +1,38 @@
+class lab:
+   def __init__(self,name,email,role):
+       self.name = name
+       self.email = email
+       self.role = role
+
+    def information(self):
+        return f"{self.name} ({self.role}) at {self.email} "
+
+
+
+class software_lab(lab):
+    def __init__(self, name,email,role,marks):
+        lab__init__(self,name,email,role)
+        self.marks = marks
+
+    def student1(self):
+        return f"{self.name} (s) roll_number ({self.role }) scored{self.marks}"
+
+    def instructor(self):
+        return f"{self.name}(I) can be reached at {self.mail}"
+    marks_in = int(input("enter marks of student "))
+    software_lab1 = software_lab()
+
+
+
+
+def main():
+    #Employee Object
+    student = lab()
+    student.setData()
+    student.showData()
+    student1 = software_lab()
+    student1.softwarelab()
+
+
+if __name__=="__main__":
+    main()
